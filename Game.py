@@ -6,7 +6,7 @@ from Boss import Boss
 
 
 class Game:
-    def __init__(self, SCREEN_WIDTH = 800, SCREEN_HEIGHT = 600, WHITE = (255, 255, 255), BLACK = (0, 0, 0), RED = (255, 0, 0), BLUE = (0, 0, 255)):
+    def __init__(self, SCREEN_WIDTH = 800, SCREEN_HEIGHT = 600,  BLACK = (0, 0, 0), RED = (255, 0, 0), BLUE = (0, 0, 255)):
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         pygame.display.set_caption("Juego de Disparos")
         self.clock = pygame.time.Clock()
@@ -22,7 +22,7 @@ class Game:
         while self.is_running:
             self.update()
 
-    def update(self):
+    def update(self, SCREEN_WIDTH = 800, SCREEN_HEIGHT = 600,WHITE=(255,255,255), BLACK = (0, 0, 0), RED = (255, 0, 0), BLUE = (0, 0, 255)):
         self.screen.fill(BLACK)
         keys = pygame.key.get_pressed()
 
