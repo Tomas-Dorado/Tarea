@@ -1,7 +1,7 @@
 import pygame
 from Entity import Entity
 from Shot import Shot
-from Player import Player
+
 
 class Character(Entity):
     def __init__(self, x, y, image=None, lives=3):
@@ -9,7 +9,7 @@ class Character(Entity):
         self.lives = lives
         self.is_alive = True
 
-    def shoot(self):
+    def shoot(self, Player):
         return Shot(self.x + 25, self.y, -10 if isinstance(self, Player) else 10)
 
     def collide(self, other):

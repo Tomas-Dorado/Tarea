@@ -1,4 +1,5 @@
 from Opponent import Opponent
+import random
 
 class Boss(Opponent):
     def __init__(self, x, y, image=None):
