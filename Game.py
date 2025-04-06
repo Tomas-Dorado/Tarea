@@ -42,7 +42,7 @@ class Game:
             if event.type == pygame.QUIT:
                 self.is_running = False
             if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-                self.shots.append(self.player.shoot())
+                self.shots.append(self.player.shoot(Player))
 
         # Update shots
         for shot in self.shots[:]:
