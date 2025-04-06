@@ -1,6 +1,7 @@
 import pygame
 from Entity import Entity
 from Shot import Shot
+from Player import Player
 
 class Character(Entity):
     def __init__(self, x, y, image=None, lives=3):
