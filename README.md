@@ -31,3 +31,10 @@ Este proyecto es un juego de disparos desarrollado en Python utilizando la bibli
    ```bash
    git clone https://github.com/Tomas-Dorado/Tarea.git
    cd Tarea
+   ```
+
+## Diagrama
+
+A continuación se muestra un diagrama que representa la estructura del proyecto:
+
+![Diagrama del Proyecto](diagram%20(2).png)
