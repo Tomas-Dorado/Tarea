@@ -4,17 +4,9 @@ from Player import Player
 from Opponent import Opponent
 from Boss import Boss
 
-pygame.init()
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600 
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-RED = (255, 0, 0)
-BLUE = (0, 0, 255)
-
 
 class Game:
-    def __init__(self):
+    def __init__(self, SCREEN_WIDTH = 800, SCREEN_HEIGHT = 600, WHITE = (255, 255, 255), BLACK = (0, 0, 0), RED = (255, 0, 0), BLUE = (0, 0, 255)):
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         pygame.display.set_caption("Juego de Disparos")
         self.clock = pygame.time.Clock()
@@ -42,7 +34,7 @@ class Game:
             if event.type == pygame.QUIT:
                 self.is_running = False
             if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-                self.shots.append(self.player.shoot(Player))
+                self.shots.append(self.player.shoot())
 
         # Update shots
         for shot in self.shots[:]:
@@ -116,8 +108,4 @@ class Game:
         print("Game Over")
         self.is_running = False
 
-# Run the game
-if __name__ == "__main__":
-    game = Game()
-    game.start()
-    pygame.quit() 
+
