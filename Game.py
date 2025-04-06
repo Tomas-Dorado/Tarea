@@ -104,8 +104,16 @@ class Game:
         pygame.display.flip()
         self.clock.tick(60)
 
-    def end_game(self):
-        print("Game Over")
+    def end_game(self, SCREEN_WIDTH = 800, SCREEN_HEIGHT = 600, WHITE=(255,255,255)):
+        font = pygame.font.SysFont(None, 72)
+        if self.boss_defeated and self.player.lives > 0:
+            victory_text = font.render("Victory! You defeated the boss!", True, WHITE)
+            self.screen.blit(victory_text, (SCREEN_WIDTH // 2 - victory_text.get_width() // 2, SCREEN_HEIGHT // 2))
+        else:
+            game_over_text = font.render("Game Over", True, WHITE)
+            self.screen.blit(game_over_text, (SCREEN_WIDTH // 2 - game_over_text.get_width() // 2, SCREEN_HEIGHT // 2))
+        pygame.display.flip()
+        pygame.time.wait(3000)
         self.is_running = False
 
 
